@@ -1,6 +1,10 @@
 
 $(window).on("load", function () {
     
-    textfCaptcha(".fCaptcha")
+    textfCaptcha(".fCaptcha", () => {
+
+        alert("You are not a bot!")
+
+    })
 
 })

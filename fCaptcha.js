@@ -1,6 +1,6 @@
 
 
-function textfCaptcha(elemSEL) {
+function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the text you see") {
 
     function uuid(len) {
 
@@ -104,14 +104,33 @@ function textfCaptcha(elemSEL) {
         let curr = $(elem[i]);
 
         let canvas = $("<canvas></canvas>");
+        let title = $("<h1></h1>");
+        let input = $("<input></input>");
+        let submitBtn = $("<button></button>");
+
+        title.text(mess)
 
         canvas[0].width = 500
         canvas[0].height = 150
 
-        drawText(canvas[0].getContext("2d"))
-        
+        submitBtn.text("Verify")
 
+        drawText(canvas[0].getContext("2d"))
+
+        title.css("font-family", "Verdana, Geneva, Tahoma, sans-serif")
+        submitBtn.css("background", "#3cf21f")
+        submitBtn.css("border", "none")
+        input.css("padding", "15px")
+        submitBtn.css("padding", "15px")
+        submitBtn.css("margin", "15px")
+        input.css("margin", "15px")
+
+
+        curr.append(title)
         curr.append(canvas);
+        curr.append($("<br>"))
+        curr.append(input)
+        curr.append(submitBtn)
 
 
     }
