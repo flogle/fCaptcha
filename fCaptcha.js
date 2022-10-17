@@ -22,6 +22,8 @@ function textfCaptcha(elemSEL) {
     const height = 150;
 
     function drawText(g2d) {
+
+        g2d.clearRect(0, 0, width, height);
         
 
         function randomColor() {
