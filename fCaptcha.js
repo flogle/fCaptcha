@@ -41,8 +41,6 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the tex
 
         }
 
-        console.log(g2d)
-
         g2d.fillStyle = randomColor()
         
         g2d.fillRect(0, 0, 500, 150)
