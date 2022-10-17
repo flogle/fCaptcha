@@ -1,5 +1,4 @@
 
-
 function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the text you see") {
 
     function uuid(len) {
