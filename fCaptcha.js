@@ -1,5 +1,22 @@
 
+
 function textfCaptcha(elemSEL) {
+
+    function uuid(len) {
+
+        const chars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+        let res = "";
+
+        for (let i = 0; i < len; i++) {
+
+            let indexChar = Math.floor(Math.random() * chars.length);
+            res += chars[indexChar];
+
+        }
+
+        return res;
+
+    }
 
     const width = 500;
     const height = 150;
@@ -46,6 +63,35 @@ function textfCaptcha(elemSEL) {
             
 
         }
+
+        let text = uuid(8);
+
+        g2d.font = "25px 'Times New Roman', Times, serif"
+
+        g2d.fillStyle = "#ffffff"
+
+        let sx = 35;
+        let sy = 75;
+
+        for (let i = 0; i < text.length; i++) {
+
+            if (Math.random() > 0.5) {
+
+                 g2d.fillStyle = "#ffffff"
+
+            } else {
+
+                g2d.fillStyle = "#000000"
+
+            }
+
+            g2d.fillText(text[i], sx, sy);
+
+            sx += 50
+            sy -= 3
+
+        }
+
 
     }
     
