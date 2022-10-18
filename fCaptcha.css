@@ -1,6 +1,7 @@
 .fCaptcha {
-
+    
     margin: 15px;
+    color: #000000;
 
 }
 
@@ -39,6 +40,31 @@
     padding: 15px;
     background-color: #3cf21f;
     background: #3cf21f;
+    color: #000000;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.fCaptcha.btn:hover {
+
+
+    padding: 15px;
+    background-color: #30c719;
+    background: #30c719;
+    color: #000000;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.fCaptcha.btn:active {
+
+
+    padding: 15px;
+    background-color: #28a515;
+    color: #ffffff;
+    background: #28a515;
     border-radius: 15px;
     border: none;
 
