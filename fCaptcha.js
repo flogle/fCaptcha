@@ -1,5 +1,7 @@
 
-function textfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onError = null, mess = "Enter the text you see") {
+function textfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onError = null, caseSensitive = true, mess = "Enter the text you see") {
+
+    if (mess == null) mess = "Enter the text you see"
 
     function uuid(len) {
 
@@ -138,6 +140,15 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onEr
             let inTxt = input.val();
             
             if (onSubmit != null) onSubmit()
+
+            let ttxt = txt;
+
+            if (!caseSensitive) {
+
+                ttxt = txt.toLowerCase();
+                inTxt = inTxt.toLowerCase()
+
+            }
 
             if (inTxt == txt) {
 
