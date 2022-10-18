@@ -150,7 +150,7 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onEr
 
             }
 
-            if (inTxt == txt) {
+            if (inTxt == ttxt) {
 
                 onSuccess()
 
