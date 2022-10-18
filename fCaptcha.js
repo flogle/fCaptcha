@@ -114,17 +114,15 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the tex
 
         drawText(canvas[0].getContext("2d"))
 
-        title.css("font-family", "Verdana, Geneva, Tahoma, sans-serif")
-        submitBtn.css("background", "#3cf21f")
-        submitBtn.css("border", "none")
-        input.css("padding", "15px")
-        submitBtn.css("padding", "15px")
-        submitBtn.css("margin", "15px")
-        input.css("margin", "15px")
-
+        title.addClass("fCaptcha title")
+        canvas.addClass("fCaptcha canvas")
+        input.addClass("fCaptcha input")
+        submitBtn.addClass("fCaptcha btn")
 
         curr.append(title)
+        curr.append($("<br>"))
         curr.append(canvas);
+        curr.append($("<br>"))
         curr.append($("<br>"))
         curr.append(input)
         curr.append(submitBtn)

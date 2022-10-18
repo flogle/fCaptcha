@@ -1,0 +1,45 @@
+.fCaptcha {
+
+    margin: 15px;
+
+}
+
+.fCaptcha.title {
+
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.fCaptcha.canvas {
+
+
+    position: relative;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: dashed;
+
+}
+
+.fCaptcha.input {
+
+
+    padding: 15px;
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: #000000;
+    outline: none;
+
+}
+
+.fCaptcha.btn {
+
+
+    padding: 15px;
+    background-color: #3cf21f;
+    background: #3cf21f;
+    border-radius: 15px;
+    border: none;
+
+}
