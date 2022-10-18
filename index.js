@@ -5,6 +5,6 @@ $(window).on("load", function () {
 
         location.href = "test.html"
 
-    }, null, null, null, false, "Enter the text you see to go to the test page")
+    }, null, null, null, false, "Enter the text you see to go to the test page", "center")
 
 })
