@@ -1,5 +1,5 @@
 
-function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the text you see") {
+function textfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onError = null, mess = "Enter the text you see") {
 
     function uuid(len) {
 
@@ -91,6 +91,8 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the tex
 
         }
 
+        return text;
+
 
     }
     
@@ -104,20 +106,56 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the tex
         let title = $("<h1></h1>");
         let input = $("<input></input>");
         let submitBtn = $("<button></button>");
-
+        let remakeSpBt = $("<span></span>")
+        
+        
         title.text(mess)
-
+        
         canvas[0].width = 500
         canvas[0].height = 150
-
+        
         submitBtn.text("Verify")
-
-        drawText(canvas[0].getContext("2d"))
+        remakeSpBt.text("Regenerate")
+        
+        let txt = drawText(canvas[0].getContext("2d"));
 
         title.addClass("fCaptcha title")
         canvas.addClass("fCaptcha canvas")
         input.addClass("fCaptcha input")
         submitBtn.addClass("fCaptcha btn")
+        remakeSpBt.addClass("fCaptcha span")
+
+        remakeSpBt.on("click", function () {
+            
+            txt = drawText(canvas[0].getContext("2d"));
+
+            if (onChange != null) onChange()
+
+        })
+
+        submitBtn.on("click", function () {
+            
+            let inTxt = input.val();
+            
+            if (onSubmit != null) onSubmit()
+
+            if (inTxt == txt) {
+
+                onSuccess()
+
+            } else {
+
+                if (onError != null) onError()
+
+                txt = drawText(canvas[0].getContext("2d"));
+
+                if (onChange != null) onChange()
+
+                input.val("")
+
+            }
+
+        })
 
         curr.append(title)
         curr.append($("<br>"))
@@ -126,6 +164,7 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, mess = "Enter the tex
         curr.append($("<br>"))
         curr.append(input)
         curr.append(submitBtn)
+        curr.append(remakeSpBt)
 
 
     }

@@ -2,6 +2,7 @@
     
     margin: 15px;
     color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -67,5 +68,25 @@
     background: #28a515;
     border-radius: 15px;
     border: none;
+
+}
+
+.fCaptcha.span {
+
+    color: #1d1dff;
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+.fCaptcha.span:active {
+    
+    color: #1d1dff;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    user-select: none;
 
 }
