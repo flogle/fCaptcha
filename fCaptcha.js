@@ -209,3 +209,9 @@ function textfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onEr
 
 }
 
+function colorfCaptcha(elemSEL, onSuccess, onSubmit = null, onChange = null, onError = null, type = "color", mess = "Select the color {c}", pos = "left") {
+
+    // type is for the look if it is color it will show with color it if is no-color it will show with no color
+    // in mess {c} is where i replace it with the color code of that color
+
+}
